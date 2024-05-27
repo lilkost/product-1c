@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        product
+    </title>
+    <link rel="stylesheet" href="local/templates/main/assets/css/style.min.css">
+    <link rel="stylesheet" href="local/templates/main/assets/css/media.min.css">
+    <script src="local/templates/main/assets/js/main.min.js" defer></script>
+    <script src="../local/templates/main/assets/js/app.js" type="module" defer></script>
+</head>
+
+<body>
+
+    <!-- wrapper -->
+    <div class="wrapper">
+        <header class="header container">
+            <h1 class="header__title title">
+                Задание на производство
+            </h1>
+            <div class="d-flex flex-row justify-content-between align-items-center position-relative">
+                <button class="burger btn-reset d-flex flex-column align-items-center justify-content-center"
+                    id="burger" aria-label="Кнопка открытия меню">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+                <form class="filter d-flex flex-row align-items-start justify-content-start">
+                    <button class="filter__date-btn btn-reset" aria-label="Кнопка открытия фильтра по дате"
+                        type="button">
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_14_2558)">
+                                <path
+                                    d="M1.54167 5.56659H4.39167C4.61525 6.40892 5.10331 7.1525 5.78055 7.68264C6.45779 8.21278 7.28658 8.5 8.13906 8.5C8.99154 8.5 9.82033 8.21278 10.4976 7.68264C11.1748 7.1525 11.6629 6.40892 11.8865 5.56659H24.4583C24.7346 5.56659 24.9996 5.45422 25.1949 5.2542C25.3903 5.05417 25.5 4.78288 25.5 4.5C25.5 4.21712 25.3903 3.94583 25.1949 3.7458C24.9996 3.54578 24.7346 3.43341 24.4583 3.43341H11.8865C11.6629 2.59108 11.1748 1.8475 10.4976 1.31736C9.82033 0.787224 8.99154 0.5 8.13906 0.5C7.28658 0.5 6.45779 0.787224 5.78055 1.31736C5.10331 1.8475 4.61525 2.59108 4.39167 3.43341H1.54167C1.2654 3.43341 1.00045 3.54578 0.805097 3.7458C0.609747 3.94583 0.5 4.21712 0.5 4.5C0.5 4.78288 0.609747 5.05417 0.805097 5.2542C1.00045 5.45422 1.2654 5.56659 1.54167 5.56659ZM8.13854 2.63346C8.49908 2.63346 8.85152 2.74293 9.1513 2.94803C9.45108 3.15313 9.68472 3.44464 9.8227 3.78571C9.96067 4.12677 9.99677 4.50207 9.92643 4.86414C9.85609 5.22622 9.68248 5.5588 9.42754 5.81984C9.1726 6.08088 8.84779 6.25865 8.49417 6.33067C8.14056 6.40269 7.77404 6.36573 7.44094 6.22446C7.10785 6.08318 6.82315 5.84394 6.62284 5.53699C6.42254 5.23004 6.31563 4.86917 6.31563 4.5C6.31618 4.00514 6.50841 3.5307 6.85015 3.18078C7.1919 2.83086 7.65524 2.63403 8.13854 2.63346Z"
+                                    fill="#3B82F6" />
+                                <path
+                                    d="M24.4583 12.4337H21.6083C21.3851 11.5914 20.8973 10.8477 20.2201 10.3175C19.5429 9.78729 18.714 9.5 17.8615 9.5C17.0089 9.5 16.18 9.78729 15.5028 10.3175C14.8257 10.8477 14.3378 11.5914 14.1146 12.4337H1.54167C1.2654 12.4337 1.00045 12.546 0.805097 12.746C0.609747 12.946 0.5 13.2172 0.5 13.5C0.5 13.7828 0.609747 14.054 0.805097 14.254C1.00045 14.454 1.2654 14.5663 1.54167 14.5663H14.1146C14.3378 15.4086 14.8257 16.1523 15.5028 16.6825C16.18 17.2127 17.0089 17.5 17.8615 17.5C18.714 17.5 19.5429 17.2127 20.2201 16.6825C20.8973 16.1523 21.3851 15.4086 21.6083 14.5663H24.4583C24.7346 14.5663 24.9996 14.454 25.1949 14.254C25.3903 14.054 25.5 13.7828 25.5 13.5C25.5 13.2172 25.3903 12.946 25.1949 12.746C24.9996 12.546 24.7346 12.4337 24.4583 12.4337ZM17.8615 15.3661C17.5009 15.3661 17.1485 15.2566 16.8487 15.0516C16.5489 14.8465 16.3153 14.5551 16.1773 14.2141C16.0393 13.8731 16.0032 13.4979 16.0736 13.136C16.1439 12.774 16.3175 12.4415 16.5725 12.1805C16.8274 11.9195 17.1522 11.7418 17.5058 11.6698C17.8594 11.5978 18.226 11.6348 18.5591 11.776C18.8922 11.9172 19.1769 12.1564 19.3772 12.4633C19.5775 12.7701 19.6844 13.1309 19.6844 13.5C19.6838 13.9947 19.4916 14.469 19.1498 14.8189C18.8081 15.1687 18.3448 15.3655 17.8615 15.3661Z"
+                                    fill="#3B82F6" />
+                                <path
+                                    d="M24.4583 20.4334H11.8865C11.6629 19.5911 11.1748 18.8475 10.4976 18.3174C9.82033 17.7872 8.99154 17.5 8.13906 17.5C7.28658 17.5 6.45779 17.7872 5.78055 18.3174C5.10331 18.8475 4.61525 19.5911 4.39167 20.4334H1.54167C1.2654 20.4334 1.00045 20.5458 0.805097 20.7458C0.609747 20.9458 0.5 21.2171 0.5 21.5C0.5 21.7829 0.609747 22.0542 0.805097 22.2542C1.00045 22.4542 1.2654 22.5666 1.54167 22.5666H4.39167C4.61525 23.4089 5.10331 24.1525 5.78055 24.6826C6.45779 25.2128 7.28658 25.5 8.13906 25.5C8.99154 25.5 9.82033 25.2128 10.4976 24.6826C11.1748 24.1525 11.6629 23.4089 11.8865 22.5666H24.4583C24.7346 22.5666 24.9996 22.4542 25.1949 22.2542C25.3903 22.0542 25.5 21.7829 25.5 21.5C25.5 21.2171 25.3903 20.9458 25.1949 20.7458C24.9996 20.5458 24.7346 20.4334 24.4583 20.4334ZM8.13854 23.3665C7.778 23.3665 7.42556 23.2571 7.12578 23.052C6.82601 22.8469 6.59236 22.5554 6.45439 22.2143C6.31641 21.8732 6.28031 21.4979 6.35065 21.1359C6.42099 20.7738 6.5946 20.4412 6.84954 20.1802C7.10448 19.9191 7.4293 19.7413 7.78291 19.6693C8.13652 19.5973 8.50305 19.6343 8.83614 19.7755C9.16924 19.9168 9.45394 20.1561 9.65424 20.463C9.85455 20.77 9.96146 21.1308 9.96146 21.5C9.96063 21.9948 9.76831 22.469 9.42663 22.8189C9.08494 23.1688 8.62176 23.3657 8.13854 23.3665Z"
+                                    fill="#3B82F6" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_14_2558">
+                                    <rect width="25" height="25" fill="white" transform="translate(0.5 0.5)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </button>
+                    <search role="search" class="w-100  d-flex flex-row">
+                        <button class="filter__search-btn btn-reset" aria-label="Кнопка поиска" type="submit">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_14_2562)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M26.4305 24.9823L32 30.5517L30.5517 32L24.9823 26.4305C23.9423 27.179 22.6884 27.6358 21.3179 27.6358C17.8285 27.6358 15 24.8073 15 21.3179C15 17.8285 17.8285 15 21.3179 15C24.8073 15 27.6358 17.8285 27.6358 21.3179C27.6358 22.6884 27.179 23.9423 26.4305 24.9823ZM21.3179 16.944C18.8977 16.944 16.944 18.8977 16.944 21.3179C16.944 23.7381 18.8977 25.6918 21.3179 25.6918C23.7381 25.6918 25.6918 23.7381 25.6918 21.3179C25.6918 18.8977 23.7381 16.944 21.3179 16.944Z"
+                                        fill="#C1C1C1" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_14_2562">
+                                        <rect x="4" y="4" width="40" height="40" rx="20" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+                        <label for="" class="w-100">
+                            <input class="filter__input w-100" type="search" placeholder="Поиск">
+                        </label>
+                    </search>
+                </form>
+                <button class="header__help-btn btn-reset" id="btn-help" aria-label="Кнопка открытия всплывающей подсказки">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_14_2720)">
+                            <path
+                                d="M13.0025 21.333C12.4159 21.333 11.9398 20.8674 11.9398 20.2913C11.9398 17.8765 13.4084 15.7524 16.0747 14.3106C18.505 12.998 19.7611 10.3989 19.2755 7.69032C18.826 5.1818 16.7261 3.12227 14.1661 2.68161C12.2405 2.35033 10.3724 2.83474 8.90374 4.04317C7.45531 5.23493 6.62536 6.98089 6.62536 8.83207C6.62536 9.40712 6.14928 9.87382 5.56268 9.87382C4.97608 9.87382 4.5 9.40712 4.5 8.83207C4.5 6.36314 5.60731 4.03588 7.53713 2.44721C9.46696 0.859595 12.0184 0.197045 14.5338 0.629369C17.9578 1.21796 20.7675 3.97337 21.3689 7.32988C22.0044 10.8739 20.2882 14.4117 17.1012 16.1357C15.7166 16.8837 14.0652 18.2119 14.0652 20.2913C14.0652 20.8674 13.5891 21.333 13.0025 21.333ZM11.4085 23.9374C11.4085 24.7999 12.1226 25.5 13.0025 25.5C13.8824 25.5 14.5965 24.7999 14.5965 23.9374C14.5965 23.0748 13.8824 22.3748 13.0025 22.3748C12.1226 22.3748 11.4085 23.0748 11.4085 23.9374Z"
+                                fill="#3B82F6" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_14_2720">
+                                <rect width="25" height="25" fill="white" transform="translate(0.5 0.5)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </button>
+            </div>
+        </header>
+        <main class="main">
+<section class="orders container">
+  <h2 class="invisible">Список заказов</h2>
+  <ul class="orders-list">
+    <li class="orders__item">
+      <div class="orders__item-name d-flex flex-row align-items-center justify-content-between">
+        <h3 class="orders__item-name-title">Заказ ШАГ-МА 1965 (12865)</h3>
+        <div class="orders__item-date">
+          <span>Дата отгрузки</span>
+          <time datetime="2024-20-05">20.05.2024</time>
+        </div>
+      </div>
+      <ul class="orders__info-list">
+        <li class="orders__info-item">
+          <div class="orders__info-item-content orders__el_padding-inline">
+            <button class="orders__info-print btn-reset">
+              Распечатать этикетку
+            </button>
+            <div class="orders__info-item-top d-flex flex-row align-items-center justify-content-between item-counter"
+              data-count-all="2">
+              <div class="orders__info-item-top-col">
+                <h4 class="orders__info-item-top-title">
+                  Люк SHAGMA под плитку 300х600 (260х633) мм
+                </h4>
+                <span class="orders__info-item-top-count"> 2 шт</span>
+              </div>
+              <div class="orders__info-item-top-col">
+                <span class="orders__item-status orders__status">
+                  Упаковано
+                </span>
+                <div class="orders__counter d-flex flex-row align-items-center justify-content-center" data-count="0">
+                  <button
+                    class="orders__counter-minus btn-counter btn-counter-minus btn-reset d-flex flex-column align-items-center justify-content-center"
+                    aria-label="Уменьшить количество товаров на единицу (минимальное значение 0)">
+                    <svg width="18" height="3" viewBox="0 0 18 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M10.582 0H16.418C17.2917 0 18 0.671567 18 1.5C18 2.32843 17.2917 3 16.418 3H10.582H7.41797H1.58203C0.708293 3 0 2.32843 0 1.5C0 0.671567 0.708293 0 1.58203 0H7.41797H10.582Z"
+                        fill="#3B82F6" />
+                    </svg>
+                  </button>
+                  <p class="orders__counter-count item-count">0</p>
+                  <button
+                    class="orders__counter-plus btn-counter-plus btn-counter btn-reset d-flex flex-column align-items-center justify-content-center"
+                    aria-label="Увеличить количество товаров на единицу">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M16.418 7.41797H10.582V1.58203C10.582 0.708293 9.87374 0 9 0C8.12626 0 7.41797 0.708293 7.41797 1.58203V7.41797H1.58203C0.708293 7.41797 0 8.12626 0 9C0 9.87374 0.708293 10.582 1.58203 10.582H7.41797V16.418C7.41797 17.2917 8.12626 18 9 18C9.87374 18 10.582 17.2917 10.582 16.418V10.582H16.418C17.2917 10.582 18 9.87374 18 9C18 8.12626 17.2917 7.41797 16.418 7.41797Z"
+                        fill="#3B82F6" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="orders__table">
+            <div class="orders__table-top">
+              <div class="orders__table-top-row d-flex flex-row align-items-center">
+                <div class="orders__table-top-col text-table">Наименование</div>
+                <div class="orders__table-top-col text-table">Количество</div>
+                <div class="orders__table-top-col text-table">Размер, мм</div>
+              </div>
+            </div>
+            <div class="orders__table-body">
+              <div class="orders__table-body-row d-grid item-counter orders__table_padding-inline" data-count-all="4">
+                <div class="orders__table-body-col text-table">Брусок №1 </div>
+                <div class="orders__table-body-col text-table">4</div>
+                <div class="orders__table-body-col text-table">322</div>
+                <div class="orders__table-body-col text-table" data-count="0">
+                  <span class="orders__item-body-status orders__status">
+                    Скомплектовано
+                  </span>
+                  <div
+                    class="orders__table-body-counter orders__counter d-flex flex-row align-items-center justify-content-center">
+                    <button
+                      class="orders__counter-minus btn-counter btn-counter-minus btn-reset d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Уменьшить количество товаров на единицу (минимальное значение 0)">
+                      <svg width="18" height="3" viewBox="0 0 18 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M10.582 0H16.418C17.2917 0 18 0.671567 18 1.5C18 2.32843 17.2917 3 16.418 3H10.582H7.41797H1.58203C0.708293 3 0 2.32843 0 1.5C0 0.671567 0.708293 0 1.58203 0H7.41797H10.582Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                    <p class="orders__counter-count item-count">0</p>
+                    <button
+                      class="orders__counter-plus btn-counter btn-counter-plus btn-reset d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Увеличить количество товаров на единицу">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M16.418 7.41797H10.582V1.58203C10.582 0.708293 9.87374 0 9 0C8.12626 0 7.41797 0.708293 7.41797 1.58203V7.41797H1.58203C0.708293 7.41797 0 8.12626 0 9C0 9.87374 0.708293 10.582 1.58203 10.582H7.41797V16.418C7.41797 17.2917 8.12626 18 9 18C9.87374 18 10.582 17.2917 10.582 16.418V10.582H16.418C17.2917 10.582 18 9.87374 18 9C18 8.12626 17.2917 7.41797 16.418 7.41797Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <label for="id1" class="orders__item-checked">
+                  <input id="id1" class="orders__item-checked-input" type="checkbox" name="" id="">
+                  <span class="orders__item-checked-decor"></span>
+                </label>
+              </div>
+              <div class="orders__table-body-row d-grid item-counter orders__table_padding-inline" data-count-all="4">
+                <div class="orders__table-body-col text-table">Брусок №2</div>
+                <div class="orders__table-body-col text-table">4</div>
+                <div class="orders__table-body-col text-table">645</div>
+                <div class="orders__table-body-col text-table" data-count="0">
+                  <span class="orders__item-body-status orders__status">
+                    Скомплектовано
+                  </span>
+                  <div
+                    class="orders__table-body-counter orders__counter d-flex flex-row align-items-center justify-content-center">
+                    <button
+                      class="orders__counter-minus btn-counter btn-counter-minus btn-reset d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Уменьшить количество товаров на единицу (минимальное значение 0)">
+                      <svg width="18" height="3" viewBox="0 0 18 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M10.582 0H16.418C17.2917 0 18 0.671567 18 1.5C18 2.32843 17.2917 3 16.418 3H10.582H7.41797H1.58203C0.708293 3 0 2.32843 0 1.5C0 0.671567 0.708293 0 1.58203 0H7.41797H10.582Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                    <p class="orders__counter-count item-count">0</p>
+                    <button
+                      class="orders__counter-plus btn-counter btn-counter-plus btn-reset d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Увеличить количество товаров на единицу">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M16.418 7.41797H10.582V1.58203C10.582 0.708293 9.87374 0 9 0C8.12626 0 7.41797 0.708293 7.41797 1.58203V7.41797H1.58203C0.708293 7.41797 0 8.12626 0 9C0 9.87374 0.708293 10.582 1.58203 10.582H7.41797V16.418C7.41797 17.2917 8.12626 18 9 18C9.87374 18 10.582 17.2917 10.582 16.418V10.582H16.418C17.2917 10.582 18 9.87374 18 9C18 8.12626 17.2917 7.41797 16.418 7.41797Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <label for="id2" class="orders__item-checked">
+                  <input id="id2" class="orders__item-checked-input" type="checkbox" name="" id="">
+                  <span class="orders__item-checked-decor"></span>
+                </label>
+              </div>
+              <div class="orders__table-body-row d-grid item-counter orders__table_padding-inline" data-count-all="2">
+                <div class="orders__table-body-col text-table">ГВЛ</div>
+                <div class="orders__table-body-col text-table">2</div>
+                <div class="orders__table-body-col text-table">327х683</div>
+                <div class="orders__table-body-col text-table" data-count="0">
+                  <span class="orders__item-body-status orders__status">
+                    Скомплектовано
+                  </span>
+                  <div
+                    class="orders__table-body-counter orders__counter d-flex flex-row align-items-center justify-content-center">
+                    <button
+                      class="orders__counter-minus btn-counter btn-counter-minus btn-reset d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Уменьшить количество товаров на единицу (минимальное значение 0)">
+                      <svg width="18" height="3" viewBox="0 0 18 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M10.582 0H16.418C17.2917 0 18 0.671567 18 1.5C18 2.32843 17.2917 3 16.418 3H10.582H7.41797H1.58203C0.708293 3 0 2.32843 0 1.5C0 0.671567 0.708293 0 1.58203 0H7.41797H10.582Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                    <p class="orders__counter-count item-count">0</p>
+                    <button
+                      class="orders__counter-plus btn-counter btn-counter-plus btn-reset d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Увеличить количество товаров на единицу">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M16.418 7.41797H10.582V1.58203C10.582 0.708293 9.87374 0 9 0C8.12626 0 7.41797 0.708293 7.41797 1.58203V7.41797H1.58203C0.708293 7.41797 0 8.12626 0 9C0 9.87374 0.708293 10.582 1.58203 10.582H7.41797V16.418C7.41797 17.2917 8.12626 18 9 18C9.87374 18 10.582 17.2917 10.582 16.418V10.582H16.418C17.2917 10.582 18 9.87374 18 9C18 8.12626 17.2917 7.41797 16.418 7.41797Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <label for="id3" class="orders__item-checked">
+                  <input id="id3" class="orders__item-checked-input" type="checkbox" name="" id="">
+                  <span class="orders__item-checked-decor"></span>
+                </label>
+              </div>
+              <div class="orders__table-body-row d-grid item-counter orders__table_padding-inline" data-count-all="4">
+                <div class="orders__table-body-col text-table">ХДФ</div>
+                <div class="orders__table-body-col text-table">4</div>
+                <div class="orders__table-body-col text-table">349х693</div>
+                <div class="orders__table-body-col text-table" data-count="0">
+                  <span class="orders__item-body-status orders__status">
+                    Скомплектовано
+                  </span>
+                  <div
+                    class="orders__table-body-counter orders__counter d-flex flex-row align-items-center justify-content-center">
+                    <button
+                      class="orders__counter-minus btn-counter btn-reset btn-counter-minus d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Уменьшить количество товаров на единицу (минимальное значение 0)">
+                      <svg width="18" height="3" viewBox="0 0 18 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M10.582 0H16.418C17.2917 0 18 0.671567 18 1.5C18 2.32843 17.2917 3 16.418 3H10.582H7.41797H1.58203C0.708293 3 0 2.32843 0 1.5C0 0.671567 0.708293 0 1.58203 0H7.41797H10.582Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                    <p class="orders__counter-count item-count">0</p>
+                    <button
+                      class="orders__counter-plus btn-counter btn-counter-plus btn-reset d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Увеличить количество товаров на единицу">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M16.418 7.41797H10.582V1.58203C10.582 0.708293 9.87374 0 9 0C8.12626 0 7.41797 0.708293 7.41797 1.58203V7.41797H1.58203C0.708293 7.41797 0 8.12626 0 9C0 9.87374 0.708293 10.582 1.58203 10.582H7.41797V16.418C7.41797 17.2917 8.12626 18 9 18C9.87374 18 10.582 17.2917 10.582 16.418V10.582H16.418C17.2917 10.582 18 9.87374 18 9C18 8.12626 17.2917 7.41797 16.418 7.41797Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <label for="id4" class="orders__item-checked">
+                  <input id="id4" class="orders__item-checked-input" type="checkbox" name="" id="">
+                  <span class="orders__item-checked-decor"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="orders__info-item">
+          <div class="orders__info-item-content orders__el_padding-inline">
+            <button class="orders__info-print btn-reset">
+              Распечатать этикетку
+            </button>
+            <div class="orders__info-item-top d-flex flex-row align-items-center justify-content-between item-counter"
+              data-count-all="999">
+              <div class="orders__info-item-top-col">
+                <h4 class="orders__info-item-top-title">
+                  Люк SHAGMA под плитку 300х600 (260х633) мм
+                </h4>
+                <span class="orders__info-item-top-count"> 999 шт</span>
+              </div>
+              <div class="orders__info-item-top-col">
+                <span class="orders__item-status orders__status">
+                  Упаковано
+                </span>
+                <div class="orders__counter d-flex flex-row align-items-center justify-content-center" data-count="999">
+                  <button
+                    class="orders__counter-minus btn-counter btn-counter-minus btn-reset d-flex flex-column align-items-center justify-content-center"
+                    aria-label="Уменьшить количество товаров на единицу (минимальное значение 0)">
+                    <svg width="18" height="3" viewBox="0 0 18 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M10.582 0H16.418C17.2917 0 18 0.671567 18 1.5C18 2.32843 17.2917 3 16.418 3H10.582H7.41797H1.58203C0.708293 3 0 2.32843 0 1.5C0 0.671567 0.708293 0 1.58203 0H7.41797H10.582Z"
+                        fill="#3B82F6" />
+                    </svg>
+                  </button>
+                  <p class="orders__counter-count item-count">999</p>
+                  <button
+                    class="orders__counter-plus btn-counter-plus btn-counter btn-reset d-flex flex-column align-items-center justify-content-center"
+                    aria-label="Увеличить количество товаров на единицу">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M16.418 7.41797H10.582V1.58203C10.582 0.708293 9.87374 0 9 0C8.12626 0 7.41797 0.708293 7.41797 1.58203V7.41797H1.58203C0.708293 7.41797 0 8.12626 0 9C0 9.87374 0.708293 10.582 1.58203 10.582H7.41797V16.418C7.41797 17.2917 8.12626 18 9 18C9.87374 18 10.582 17.2917 10.582 16.418V10.582H16.418C17.2917 10.582 18 9.87374 18 9C18 8.12626 17.2917 7.41797 16.418 7.41797Z"
+                        fill="#3B82F6" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="orders__table">
+            <div class="orders__table-top">
+              <div class="orders__table-top-row d-flex flex-row align-items-center">
+                <div class="orders__table-top-col text-table">Наименование</div>
+                <div class="orders__table-top-col text-table">Количество</div>
+                <div class="orders__table-top-col text-table">Размер, мм</div>
+              </div>
+            </div>
+            <div class="orders__table-body ">
+              <div class="orders__table-body-row d-grid item-counter orders__table_padding-inline"
+                data-count-all="1998">
+                <div class="orders__table-body-col text-table">Брусок №1 </div>
+                <div class="orders__table-body-col text-table">1998</div>
+                <div class="orders__table-body-col text-table">322</div>
+                <div class="orders__table-body-col text-table" data-count="0">
+                  <span class="orders__item-body-status orders__status">
+                    Скомплектовано
+                  </span>
+                  <div
+                    class="orders__table-body-counter orders__counter d-flex flex-row align-items-center justify-content-center">
+                    <button
+                      class="orders__counter-minus btn-counter btn-counter-minus btn-reset d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Уменьшить количество товаров на единицу (минимальное значение 0)">
+                      <svg width="18" height="3" viewBox="0 0 18 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M10.582 0H16.418C17.2917 0 18 0.671567 18 1.5C18 2.32843 17.2917 3 16.418 3H10.582H7.41797H1.58203C0.708293 3 0 2.32843 0 1.5C0 0.671567 0.708293 0 1.58203 0H7.41797H10.582Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                    <p class="orders__counter-count item-count">0</p>
+                    <button
+                      class="orders__counter-plus btn-counter btn-counter-plus btn-reset d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Увеличить количество товаров на единицу">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M16.418 7.41797H10.582V1.58203C10.582 0.708293 9.87374 0 9 0C8.12626 0 7.41797 0.708293 7.41797 1.58203V7.41797H1.58203C0.708293 7.41797 0 8.12626 0 9C0 9.87374 0.708293 10.582 1.58203 10.582H7.41797V16.418C7.41797 17.2917 8.12626 18 9 18C9.87374 18 10.582 17.2917 10.582 16.418V10.582H16.418C17.2917 10.582 18 9.87374 18 9C18 8.12626 17.2917 7.41797 16.418 7.41797Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <label for="id5" class="orders__item-checked">
+                  <input id="id5" class="orders__item-checked-input" type="checkbox" name="" id="">
+                  <span class="orders__item-checked-decor"></span>
+                </label>
+              </div>
+              <div class="orders__table-body-row d-grid item-counter orders__table_padding-inline"
+                data-count-all="1998">
+                <div class="orders__table-body-col text-table">Брусок №2</div>
+                <div class="orders__table-body-col text-table">1998</div>
+                <div class="orders__table-body-col text-table">645</div>
+                <div class="orders__table-body-col text-table" data-count="0">
+                  <span class="orders__item-body-status orders__status">
+                    Скомплектовано
+                  </span>
+                  <div
+                    class="orders__table-body-counter orders__counter d-flex flex-row align-items-center justify-content-center">
+                    <button
+                      class="orders__counter-minus btn-counter btn-counter-minus btn-reset d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Уменьшить количество товаров на единицу (минимальное значение 0)">
+                      <svg width="18" height="3" viewBox="0 0 18 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M10.582 0H16.418C17.2917 0 18 0.671567 18 1.5C18 2.32843 17.2917 3 16.418 3H10.582H7.41797H1.58203C0.708293 3 0 2.32843 0 1.5C0 0.671567 0.708293 0 1.58203 0H7.41797H10.582Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                    <p class="orders__counter-count item-count">0</p>
+                    <button
+                      class="orders__counter-plus btn-counter btn-counter-plus btn-reset d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Увеличить количество товаров на единицу">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M16.418 7.41797H10.582V1.58203C10.582 0.708293 9.87374 0 9 0C8.12626 0 7.41797 0.708293 7.41797 1.58203V7.41797H1.58203C0.708293 7.41797 0 8.12626 0 9C0 9.87374 0.708293 10.582 1.58203 10.582H7.41797V16.418C7.41797 17.2917 8.12626 18 9 18C9.87374 18 10.582 17.2917 10.582 16.418V10.582H16.418C17.2917 10.582 18 9.87374 18 9C18 8.12626 17.2917 7.41797 16.418 7.41797Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <label for="id6" class="orders__item-checked">
+                  <input id="id6" class="orders__item-checked-input" type="checkbox" name="" id="">
+                  <span class="orders__item-checked-decor"></span>
+                </label>
+              </div>
+              <div class="orders__table-body-row d-grid item-counter orders__table_padding-inline" data-count-all="999">
+                <div class="orders__table-body-col text-table">ГВЛ</div>
+                <div class="orders__table-body-col text-table">999</div>
+                <div class="orders__table-body-col text-table">327х683</div>
+                <div class="orders__table-body-col text-table">
+                  <span class="orders__item-body-status orders__status">
+                    Скомплектовано
+                  </span>
+                  <div
+                    class="orders__table-body-counter orders__counter d-flex flex-row align-items-center justify-content-center"
+                    data-count="999">
+                    <button
+                      class="orders__counter-minus btn-counter btn-counter-minus btn-reset d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Уменьшить количество товаров на единицу (минимальное значение 0)">
+                      <svg width="18" height="3" viewBox="0 0 18 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M10.582 0H16.418C17.2917 0 18 0.671567 18 1.5C18 2.32843 17.2917 3 16.418 3H10.582H7.41797H1.58203C0.708293 3 0 2.32843 0 1.5C0 0.671567 0.708293 0 1.58203 0H7.41797H10.582Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                    <p class="orders__counter-count item-count">999</p>
+                    <button
+                      class="orders__counter-plus btn-counter btn-counter-plus btn-reset d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Увеличить количество товаров на единицу">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M16.418 7.41797H10.582V1.58203C10.582 0.708293 9.87374 0 9 0C8.12626 0 7.41797 0.708293 7.41797 1.58203V7.41797H1.58203C0.708293 7.41797 0 8.12626 0 9C0 9.87374 0.708293 10.582 1.58203 10.582H7.41797V16.418C7.41797 17.2917 8.12626 18 9 18C9.87374 18 10.582 17.2917 10.582 16.418V10.582H16.418C17.2917 10.582 18 9.87374 18 9C18 8.12626 17.2917 7.41797 16.418 7.41797Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <label for="id7" class="orders__item-checked">
+                  <input id="id7" class="orders__item-checked-input" type="checkbox" name="" id="">
+                  <span class="orders__item-checked-decor"></span>
+                </label>
+              </div>
+              <div class="orders__table-body-row d-grid item-counter orders__table_padding-inline"
+                data-count-all="1998">
+                <div class="orders__table-body-col text-table">ХДФ</div>
+                <div class="orders__table-body-col text-table">1998</div>
+                <div class="orders__table-body-col text-table">349х693</div>
+                <div class="orders__table-body-col text-table" data-count="0">
+                  <span class="orders__item-body-status orders__status">
+                    Скомплектовано
+                  </span>
+                  <div
+                    class="orders__table-body-counter orders__counter d-flex flex-row align-items-center justify-content-center">
+                    <button
+                      class="orders__counter-minus btn-counter btn-reset btn-counter-minus d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Уменьшить количество товаров на единицу (минимальное значение 0)">
+                      <svg width="18" height="3" viewBox="0 0 18 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M10.582 0H16.418C17.2917 0 18 0.671567 18 1.5C18 2.32843 17.2917 3 16.418 3H10.582H7.41797H1.58203C0.708293 3 0 2.32843 0 1.5C0 0.671567 0.708293 0 1.58203 0H7.41797H10.582Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                    <p class="orders__counter-count item-count">0</p>
+                    <button
+                      class="orders__counter-plus btn-counter btn-counter-plus btn-reset d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Увеличить количество товаров на единицу">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M16.418 7.41797H10.582V1.58203C10.582 0.708293 9.87374 0 9 0C8.12626 0 7.41797 0.708293 7.41797 1.58203V7.41797H1.58203C0.708293 7.41797 0 8.12626 0 9C0 9.87374 0.708293 10.582 1.58203 10.582H7.41797V16.418C7.41797 17.2917 8.12626 18 9 18C9.87374 18 10.582 17.2917 10.582 16.418V10.582H16.418C17.2917 10.582 18 9.87374 18 9C18 8.12626 17.2917 7.41797 16.418 7.41797Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <label for="id8" class="orders__item-checked">
+                  <input id="id8" class="orders__item-checked-input" type="checkbox" name="" id="">
+                  <span class="orders__item-checked-decor"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li class="orders__item">
+      <div class="orders__item-name d-flex flex-row align-items-center justify-content-between">
+        <h3 class="orders__item-name-title">Заказ ШАГ-МА 1965 (12865)</h3>
+        <div class="orders__item-date">
+          <span>Дата отгрузки</span>
+          <time datetime="2024-21-05">21.05.2024</time>
+        </div>
+      </div>
+      <ul class="orders__info-list">
+        <li class="orders__info-item">
+          <div class="orders__info-item-content orders__el_padding-inline">
+            <button class="orders__info-print btn-reset">
+              Распечатать этикетку
+            </button>
+            <div class="orders__info-item-top d-flex flex-row align-items-center justify-content-between item-counter"
+              data-count-all="2">
+              <div class="orders__info-item-top-col">
+                <h4 class="orders__info-item-top-title">
+                  Люк SHAGMA под плитку 300х600 (260х633) мм
+                </h4>
+                <span class="orders__info-item-top-count"> 2 шт</span>
+              </div>
+              <div class="orders__info-item-top-col">
+                <span class="orders__item-status orders__status">
+                  Упаковано
+                </span>
+                <div class="orders__counter d-flex flex-row align-items-center justify-content-center" data-count="0">
+                  <button
+                    class="orders__counter-minus btn-counter btn-counter-minus btn-reset d-flex flex-column align-items-center justify-content-center"
+                    aria-label="Уменьшить количество товаров на единицу (минимальное значение 0)">
+                    <svg width="18" height="3" viewBox="0 0 18 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M10.582 0H16.418C17.2917 0 18 0.671567 18 1.5C18 2.32843 17.2917 3 16.418 3H10.582H7.41797H1.58203C0.708293 3 0 2.32843 0 1.5C0 0.671567 0.708293 0 1.58203 0H7.41797H10.582Z"
+                        fill="#3B82F6" />
+                    </svg>
+                  </button>
+                  <p class="orders__counter-count item-count">0</p>
+                  <button
+                    class="orders__counter-plus btn-counter-plus btn-counter btn-reset d-flex flex-column align-items-center justify-content-center"
+                    aria-label="Увеличить количество товаров на единицу">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M16.418 7.41797H10.582V1.58203C10.582 0.708293 9.87374 0 9 0C8.12626 0 7.41797 0.708293 7.41797 1.58203V7.41797H1.58203C0.708293 7.41797 0 8.12626 0 9C0 9.87374 0.708293 10.582 1.58203 10.582H7.41797V16.418C7.41797 17.2917 8.12626 18 9 18C9.87374 18 10.582 17.2917 10.582 16.418V10.582H16.418C17.2917 10.582 18 9.87374 18 9C18 8.12626 17.2917 7.41797 16.418 7.41797Z"
+                        fill="#3B82F6" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="orders__table">
+            <div class="orders__table-top">
+              <div class="orders__table-top-row d-flex flex-row align-items-center">
+                <div class="orders__table-top-col text-table">Наименование</div>
+                <div class="orders__table-top-col text-table">Количество</div>
+                <div class="orders__table-top-col text-table">Размер, мм</div>
+              </div>
+            </div>
+            <div class="orders__table-body">
+              <div class="orders__table-body-row d-grid item-counter orders__table_padding-inline" data-count-all="2">
+                <div class="orders__table-body-col text-table">Брусок №1 </div>
+                <div class="orders__table-body-col text-table">2</div>
+                <div class="orders__table-body-col text-table">322</div>
+                <div class="orders__table-body-col text-table" data-count="0">
+                  <span class="orders__item-body-status orders__status">
+                    Скомплектовано
+                  </span>
+                  <div
+                    class="orders__table-body-counter orders__counter d-flex flex-row align-items-center justify-content-center">
+                    <button
+                      class="orders__counter-minus btn-counter btn-counter-minus btn-reset d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Уменьшить количество товаров на единицу (минимальное значение 0)">
+                      <svg width="18" height="3" viewBox="0 0 18 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M10.582 0H16.418C17.2917 0 18 0.671567 18 1.5C18 2.32843 17.2917 3 16.418 3H10.582H7.41797H1.58203C0.708293 3 0 2.32843 0 1.5C0 0.671567 0.708293 0 1.58203 0H7.41797H10.582Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                    <p class="orders__counter-count item-count">0</p>
+                    <button
+                      class="orders__counter-plus btn-counter btn-counter-plus btn-reset d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Увеличить количество товаров на единицу">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M16.418 7.41797H10.582V1.58203C10.582 0.708293 9.87374 0 9 0C8.12626 0 7.41797 0.708293 7.41797 1.58203V7.41797H1.58203C0.708293 7.41797 0 8.12626 0 9C0 9.87374 0.708293 10.582 1.58203 10.582H7.41797V16.418C7.41797 17.2917 8.12626 18 9 18C9.87374 18 10.582 17.2917 10.582 16.418V10.582H16.418C17.2917 10.582 18 9.87374 18 9C18 8.12626 17.2917 7.41797 16.418 7.41797Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <label for="id9" class="orders__item-checked">
+                  <input id="id9" class="orders__item-checked-input" type="checkbox" name="" id="">
+                  <span class="orders__item-checked-decor"></span>
+                </label>
+              </div>
+              <div class="orders__table-body-row d-grid item-counter orders__table_padding-inline" data-count-all="2">
+                <div class="orders__table-body-col text-table">Брусок №2</div>
+                <div class="orders__table-body-col text-table">2</div>
+                <div class="orders__table-body-col text-table">645</div>
+                <div class="orders__table-body-col text-table" data-count="0">
+                  <span class="orders__item-body-status orders__status">
+                    Скомплектовано
+                  </span>
+                  <div
+                    class="orders__table-body-counter orders__counter d-flex flex-row align-items-center justify-content-center">
+                    <button
+                      class="orders__counter-minus btn-counter btn-counter-minus btn-reset d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Уменьшить количество товаров на единицу (минимальное значение 0)">
+                      <svg width="18" height="3" viewBox="0 0 18 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M10.582 0H16.418C17.2917 0 18 0.671567 18 1.5C18 2.32843 17.2917 3 16.418 3H10.582H7.41797H1.58203C0.708293 3 0 2.32843 0 1.5C0 0.671567 0.708293 0 1.58203 0H7.41797H10.582Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                    <p class="orders__counter-count item-count">0</p>
+                    <button
+                      class="orders__counter-plus btn-counter btn-counter-plus btn-reset d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Увеличить количество товаров на единицу">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M16.418 7.41797H10.582V1.58203C10.582 0.708293 9.87374 0 9 0C8.12626 0 7.41797 0.708293 7.41797 1.58203V7.41797H1.58203C0.708293 7.41797 0 8.12626 0 9C0 9.87374 0.708293 10.582 1.58203 10.582H7.41797V16.418C7.41797 17.2917 8.12626 18 9 18C9.87374 18 10.582 17.2917 10.582 16.418V10.582H16.418C17.2917 10.582 18 9.87374 18 9C18 8.12626 17.2917 7.41797 16.418 7.41797Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <label for="id10" class="orders__item-checked">
+                  <input id="id10" class="orders__item-checked-input" type="checkbox" name="" id="">
+                  <span class="orders__item-checked-decor"></span>
+                </label>
+              </div>
+              <div class="orders__table-body-row d-grid item-counter orders__table_padding-inline" data-count-all="1">
+                <div class="orders__table-body-col text-table">ГВЛ</div>
+                <div class="orders__table-body-col text-table">1</div>
+                <div class="orders__table-body-col text-table">327х683</div>
+                <div class="orders__table-body-col text-table" data-count="0">
+                  <span class="orders__item-body-status orders__status">
+                    Скомплектовано
+                  </span>
+                  <div
+                    class="orders__table-body-counter orders__counter d-flex flex-row align-items-center justify-content-center">
+                    <button
+                      class="orders__counter-minus btn-counter btn-counter-minus btn-reset d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Уменьшить количество товаров на единицу (минимальное значение 0)">
+                      <svg width="18" height="3" viewBox="0 0 18 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M10.582 0H16.418C17.2917 0 18 0.671567 18 1.5C18 2.32843 17.2917 3 16.418 3H10.582H7.41797H1.58203C0.708293 3 0 2.32843 0 1.5C0 0.671567 0.708293 0 1.58203 0H7.41797H10.582Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                    <p class="orders__counter-count item-count">0</p>
+                    <button
+                      class="orders__counter-plus btn-counter btn-counter-plus btn-reset d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Увеличить количество товаров на единицу">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M16.418 7.41797H10.582V1.58203C10.582 0.708293 9.87374 0 9 0C8.12626 0 7.41797 0.708293 7.41797 1.58203V7.41797H1.58203C0.708293 7.41797 0 8.12626 0 9C0 9.87374 0.708293 10.582 1.58203 10.582H7.41797V16.418C7.41797 17.2917 8.12626 18 9 18C9.87374 18 10.582 17.2917 10.582 16.418V10.582H16.418C17.2917 10.582 18 9.87374 18 9C18 8.12626 17.2917 7.41797 16.418 7.41797Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <label for="id11" class="orders__item-checked">
+                  <input id="id11" class="orders__item-checked-input" type="checkbox" name="" id="">
+                  <span class="orders__item-checked-decor"></span>
+                </label>
+              </div>
+              <div class="orders__table-body-row d-grid item-counter orders__table_padding-inline" data-count-all="2">
+                <div class="orders__table-body-col text-table">ХДФ</div>
+                <div class="orders__table-body-col text-table">2</div>
+                <div class="orders__table-body-col text-table">349х693</div>
+                <div class="orders__table-body-col text-table" data-count="0">
+                  <span class="orders__item-body-status orders__status">
+                    Скомплектовано
+                  </span>
+                  <div
+                    class="orders__table-body-counter orders__counter d-flex flex-row align-items-center justify-content-center">
+                    <button
+                      class="orders__counter-minus btn-counter btn-reset btn-counter-minus d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Уменьшить количество товаров на единицу (минимальное значение 0)">
+                      <svg width="18" height="3" viewBox="0 0 18 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M10.582 0H16.418C17.2917 0 18 0.671567 18 1.5C18 2.32843 17.2917 3 16.418 3H10.582H7.41797H1.58203C0.708293 3 0 2.32843 0 1.5C0 0.671567 0.708293 0 1.58203 0H7.41797H10.582Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                    <p class="orders__counter-count item-count">0</p>
+                    <button
+                      class="orders__counter-plus btn-counter btn-counter-plus btn-reset d-flex flex-column align-items-center justify-content-center"
+                      aria-label="Увеличить количество товаров на единицу">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M16.418 7.41797H10.582V1.58203C10.582 0.708293 9.87374 0 9 0C8.12626 0 7.41797 0.708293 7.41797 1.58203V7.41797H1.58203C0.708293 7.41797 0 8.12626 0 9C0 9.87374 0.708293 10.582 1.58203 10.582H7.41797V16.418C7.41797 17.2917 8.12626 18 9 18C9.87374 18 10.582 17.2917 10.582 16.418V10.582H16.418C17.2917 10.582 18 9.87374 18 9C18 8.12626 17.2917 7.41797 16.418 7.41797Z"
+                          fill="#3B82F6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <label for="id12" class="orders__item-checked">
+                  <input id="id12" class="orders__item-checked-input" type="checkbox" name="" id="">
+                  <span class="orders__item-checked-decor"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+</main>
+<footer class="footer"></footer>
+</div>
+
+
+<script src="js/main.min.js"></script>
+</body>
+
+</html>
