@@ -1,6 +1,6 @@
 # Страницы
 
-- [ ] [Главная](lilkost.github.io/product-1c/)
-- [ ] [Авторизация](lilkost.github.io/product-1c/auth.html)
+- [x] [Главная](lilkost.github.io/product-1c/)
+- [x] [Авторизация](lilkost.github.io/product-1c/auth.html)
 
 
