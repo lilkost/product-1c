@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="local/templates/main/assets/css/style.min.css">
     <link rel="stylesheet" href="local/templates/main/assets/css/media.min.css">
     <script src="local/templates/main/assets/js/main.min.js" defer></script>
-    <script src="../local/templates/main/assets/js/app.js" type="module" defer></script>
+    <script src="local/templates/main/assets/js/app.js" type="module" defer></script>
 </head>
 
 <body>
@@ -29,7 +29,7 @@
                     <span class="burger__line"></span>
                 </button>
                 <form class="filter d-flex flex-row align-items-start justify-content-start">
-                    <button class="filter__date-btn btn-reset" aria-label="Кнопка открытия фильтра по дате"
+                    <button class="filter__date-btn btn-reset" id="dateFilterBtn" aria-label="Кнопка открытия фильтра по дате"
                         type="button">
                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_14_2558)">
@@ -71,7 +71,7 @@
                         </label>
                     </search>
                 </form>
-                <button class="header__help-btn btn-reset" id="btn-help" aria-label="Кнопка открытия всплывающей подсказки">
+                <button class="header__help-btn btn-reset" id="btnHelp" aria-label="Кнопка открытия всплывающей подсказки">
                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_14_2720)">
                             <path
