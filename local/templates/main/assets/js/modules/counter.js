@@ -15,21 +15,19 @@ export function counter() {
         itemMinusNode.addEventListener('click', () => Decrement(item, itemCounterNode, counterParentNode));
     });
 
-
     function Increment(item, count, parent) {
         const allCount = Number(item.getAttribute('data-count-all'));
         let currentCounter = Number(parent.getAttribute('data-count'));
         const statusItemNode = item.querySelector('.orders__status');
 
+        currentCounter = currentCounter + 1;
+
+        if (currentCounter > allCount) return;
+
+        parent.setAttribute('data-count', currentCounter);
         count.innerText = currentCounter;
 
-        if (currentCounter === allCount) {
-            statusItemNode.classList.add('status-success');
-        }
-        if (currentCounter >= allCount) return;
-
-        parent.setAttribute('data-count', currentCounter + 1);
-
+        if(currentCounter === allCount) statusItemNode.classList.add('status-success')
     }
 
     function Decrement(item, count, parent) {
@@ -37,15 +35,16 @@ export function counter() {
         let currentCounter = Number(parent.getAttribute('data-count'));
         const statusItemNode = item.querySelector('.orders__status');
 
+        currentCounter = currentCounter - 1;
+
+        if (currentCounter < 0) return;
+
+        parent.setAttribute('data-count', currentCounter);
         count.innerText = currentCounter;
 
         if (currentCounter < allCount) {
             statusItemNode.classList.remove('status-success');
         }
-
-        if (currentCounter <= 0) return;
-
-        parent.setAttribute('data-count', currentCounter - 1);
     }
 
     function CheckStatus(item, parent) {
